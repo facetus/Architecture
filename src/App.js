@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import VideoPlayer from "./components/VideoPlayer";
+import Menu from "./components/Menu";
+import Badge from "./components/Badge";
+import { useRecoilState } from "recoil";
+import { currentStateState } from "./state";
+import data from "./data/steps";
 
 function App() {
+  const [currentState, setCurrentState] = useRecoilState(currentStateState);
+
+  const currentInfo = data.find(({ id }) => {
+    return id === currentState;
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <VideoPlayer></VideoPlayer>
+      <Menu currentState={currentState} currentInfo={currentInfo}></Menu>
+      <div className="topCenter-container ">
+        <Badge>{currentInfo.badge}</Badge>
+      </div>
+    </>
   );
 }
 

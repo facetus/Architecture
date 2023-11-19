@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+.test {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+}
+
+.topCenter-container {
+  width: 100%;
+  position: absolute;
+  top: 66px;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin: auto;
+  display: flex;
+}

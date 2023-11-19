@@ -1,0 +1,30 @@
+.menu {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  justify-content: space-between;
+  /* align-items: center; */
+  align-self: stretch;
+  flex-flow: wrap;
+}
+
+.menu > div {
+    z-index: 2;
+}
+
+.menu > .right {
+  display: flex;
+  padding: var(--spacing-spacing-none, 0px);
+  align-items: flex-start;
+  gap: 4px;
+}

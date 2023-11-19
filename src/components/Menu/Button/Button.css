@@ -1,0 +1,40 @@
+.button {
+    border-radius: 200px;
+    background: #EBEBEB;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  
+  .button.active {
+    border-radius: 26px;
+    background: #326D43;
+  }
+  
+  .content {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+  }
+
+  .right > div > .content {
+    left: unset;
+    right: 0px;
+  }
+
+  .sideContent {
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    height: 60px;
+  }
+
+  .button-container {
+    position: relative;
+  }
