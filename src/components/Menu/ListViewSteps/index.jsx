@@ -11,22 +11,7 @@ const bullet = (
       viewBox="0 0 11 11"
       fill="none"
     >
-      <circle cx="5.5" cy="5.5" r="5.5" fill="#326D43" />
-    </svg>
-  </div>
-);
-
-const activeBullet = (
-  <div className="bullet">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="11"
-      height="11"
-      viewBox="0 0 11 11"
-      fill="none"
-    >
-      <circle cx="5.5" cy="5.5" r="5.5" fill="#326D43" />
-      <circle cx="5.5" cy="5.5" r="2.5" fill="white" />
+      <circle cx="5.5" cy="5.5" r="5.5" />
     </svg>
   </div>
 );
@@ -48,29 +33,34 @@ const ListViewSteps = ({ currentState }) => {
               {<div>{group}</div>}
             </div>
 
-            <div className="title-style">
-              {id === currentState ? activeBullet : bullet}
-              <div className={id === currentState ? "active" : ""}>{title}</div>
+            <div
+              key={index}
+              className={
+                id <= currentState ? "active title-style" : "title-style"
+              }
+            >
+              {bullet}
+              {index > 0 && <div className="borderLeft"></div>}
+              <div>{title}</div>
             </div>
           </div>
         );
       }
 
       return (
-        <div key={index} className="title-style">
-          {id === currentState ? activeBullet : bullet}
-          <div className={id === currentState ? "active" : ""}>{title}</div>
+        <div
+          key={index}
+          className={id <= currentState ? "active title-style" : "title-style"}
+        >
+          {bullet}
+          <div className="borderLeft"></div>
+          <div>{title}</div>
         </div>
       );
     });
   };
 
-  return (
-    <div className="list-view">
-      {renderList()}
-      <div className="borderLeft"></div>
-    </div>
-  );
+  return <div className="list-view">{renderList()}</div>;
 };
 
 export default ListViewSteps;

@@ -1,0 +1,28 @@
+.help .line {
+  color: var(--Blackish, #272727);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+  color: var(--Blackish, #272727);
+  leading-trim: both;
+  text-edge: cap;
+
+  /* Portal Desktop/Baseline */
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.help.card {
+  width: 616px;
+}
+
+.bold {
+  font-weight: 700;
+}

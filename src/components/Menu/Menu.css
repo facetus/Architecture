@@ -16,10 +16,11 @@
   /* align-items: center; */
   align-self: stretch;
   flex-flow: wrap;
+  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .menu > div {
-    z-index: 2;
+  z-index: 2;
 }
 
 .menu > .right {
@@ -27,4 +28,21 @@
   padding: var(--spacing-spacing-none, 0px);
   align-items: flex-start;
   gap: 4px;
+}
+
+.bottom.right {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  margin: 16px;
+}
+
+@media (max-width: 992px) {
+  .menu {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
 }

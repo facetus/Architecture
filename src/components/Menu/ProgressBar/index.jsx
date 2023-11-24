@@ -1,5 +1,5 @@
-import React from 'react';
-import './ProgressBar.css'; // Import your CSS file
+import React from "react";
+import "./ProgressBar.css"; // Import your CSS file
 
 const ProgressBar = ({ percentage }) => {
   const filledStyle = {
@@ -8,7 +8,9 @@ const ProgressBar = ({ percentage }) => {
 
   return (
     <div className="progress-bar">
-      <div className="filled" style={filledStyle}></div>
+      <div className="filled" style={filledStyle}>
+        <div className="filled-total"></div>
+      </div>
     </div>
   );
 };

@@ -1,40 +1,88 @@
 .button {
-    border-radius: 200px;
-    background: #EBEBEB;
-    display: flex;
-    width: 44px;
-    height: 44px;
-    padding: 8px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    box-sizing: border-box;
+  border-radius: 200px;
+  background: #ebebeb;
+  display: flex;
+  width: fit-content;
+  height: 44px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+  min-width: 44px;
+}
+
+.button.noRound {
+  display: inline-flex;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 8px;
+}
+
+.button > .cta {
+  color: var(--Blackish, #272727);
+  leading-trim: both;
+  text-edge: cap;
+
+  /* Portal Desktop/Baseline Medium */
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.button.active {
+  border-radius: 26px;
+  background: #326d43;
+}
+
+.content {
+  position: absolute;
+  top: 60px;
+  left: 0px;
+}
+
+.right > div > .content {
+  left: unset;
+  right: 0px;
+}
+
+.sideContent {
+  position: absolute;
+  top: 0px;
+  left: 60px;
+  height: 60px;
+}
+
+.button-container {
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  svg > .turnWhite {
+    /* fill: white !important; */
+    stroke: white !important;
   }
-  
-  .button.active {
-    border-radius: 26px;
-    background: #326D43;
+  svg > .fill {
+    fill: white !important;
+    /* stroke: white !important; */
   }
-  
-  .content {
-    position: absolute;
-    top: 60px;
-    left: 0px;
+  .button {
+    background: none !important;
   }
 
-  .right > div > .content {
-    left: unset;
-    right: 0px;
+  .button > .cta {
+    color: var(--White, #FFF);
+    leading-trim: both;
+    text-edge: cap;
+    
+    /* Portal Desktop/Small Medium */
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
   }
-
-  .sideContent {
-    position: absolute;
-    top: 0px;
-    left: 60px;
-    height: 60px;
-  }
-
-  .button-container {
-    position: relative;
-  }
+}

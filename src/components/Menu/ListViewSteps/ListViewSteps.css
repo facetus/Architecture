@@ -1,67 +1,81 @@
 .list-view {
-    color: #000;
-    leading-trim: both;
-    text-edge: cap;
-    font-family: Helvetica Neue;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
-    
-  }
+  color: #000;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Helvetica Neue;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
 
-  
-  .title-style {
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-    display: flex;
-    gap: 6px;
-  }
-  
-  .group-style {
-    color: #868686;
-    leading-trim: both;
-    text-edge: cap;
-    font-family: Helvetica Neue;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-bottom: 8px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-    display: flex;
-    gap: 6px;
-  }
-    
-  
+.title-style {
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 6px;
+}
 
-  .bullet {
-    width: 11px;
-    height: 11px;
-    z-index: 2;
-  }
+.group-style {
+  color: #868686;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Helvetica Neue;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 8px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 6px;
+}
 
-  .borderLeft {
-    height: 75%;
-    position: absolute;
-    top:80px;
-    border-color: #326D43;
-    border-width: 0px 0px 0px 2px;
-    border-style: solid;
-    transform: translateX(4.5px);
-    z-index: 1;
-  }
+.bullet {
+  width: 11px;
+  height: 11px;
+  z-index: 2;
+}
 
-  .title-style > .active {
-    color: #167C34;
-    leading-trim: both;
-    text-edge: cap;
-    
-    /* Portal Desktop/Small Medium */
-    font-family: Helvetica Neue;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
+.borderLeft {
+  height: 75px;
+  position: fixed;
+  border-color: #326d43;
+  border-width: 0px 0px 0px 2px;
+  border-style: solid;
+  opacity: 1;
+  transform: translateX(4.5px) translateY(-70px);
+  z-index: 1;
+}
+
+.active > .borderLeft {
+  border-color: var(--Dark-orange, #b73f08);
+  z-index: 100;
+}
+
+.title-style.active > div {
+  color: var(--Dark-orange, #b73f08);
+  leading-trim: both;
+  text-edge: cap;
+
+  /* Portal Desktop/Small Medium */
+  font-family: Helvetica Neue;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.title-style > div > svg {
+  fill: var(--Dark-orange, #326d43);
+}
+
+.title-style.active > div > svg {
+  fill: var(--Dark-orange, #b73f08);
+}
+
+.list-view > div:nth-child(1) > .group-style {
+  margin-top: 8px;
+}
+

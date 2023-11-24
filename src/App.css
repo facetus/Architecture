@@ -37,14 +37,13 @@
   }
 }
 
-
 .test {
   position: absolute;
   left: 16px;
   top: 16px;
 }
 
-.topCenter-container {
+.center-container {
   width: 100%;
   position: absolute;
   top: 66px;
@@ -53,4 +52,25 @@
   z-index: 1;
   margin: auto;
   display: flex;
+}
+
+.center-container.top {
+  top: 66px;
+}
+
+.center-container.bottom {
+  bottom: 66px;
+}
+
+@media (min-width: 992px) {
+  .showOnSmallDevices {
+    display: none;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .hideOnSmallDevices {
+    display: none;
+  }
 }

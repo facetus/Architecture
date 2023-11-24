@@ -1,0 +1,43 @@
+.subtitle {
+  color: var(--White, #fff);
+  leading-trim: both;
+  text-edge: cap;
+
+  /* Portal Desktop/Baseline */
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1em; /* 27px */
+  position: absolute;
+  bottom: 0px;
+  width: 50%;
+}
+
+.subtitle > div {
+  text-align: center;
+  width: fit-content;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.5);
+  white-space: pre-wrap;
+  padding: 0.2em 0.6em 0.2em 0.6em;
+  margin: auto;
+  text-justify: center;
+  margin: 0.5em auto 0.5em auto;
+}
+
+@media (max-width: 992px) {
+  .center-container.bottom {
+    bottom: 0px;
+    height: fit-content;
+    top:unset;
+  }
+  .subtitle {
+    left: 16px;
+    width: 80vw;
+  }
+
+  .subtitle > div {
+    margin: 0.5em auto 0.5em 0;
+  }
+}

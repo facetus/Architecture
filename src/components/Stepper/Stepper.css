@@ -1,19 +1,18 @@
 .stepper {
-    display: inline-flex;
-    padding: var(--spacing-spacing-none, 0px);
-    align-items: center;
-    gap: 24px;
-    position: absolute;
-    top: 30px;
-    z-index: 1000;
-    left: 0px;
-    width: 100%;
-    /* align-items: center; */
-    margin: auto;
-    justify-content: center;
-    z-index: 1;
+  display: inline-flex;
+  padding: var(--spacing-spacing-none, 0px);
+  align-items: center;
+  gap: 24px;
+  position: absolute;
+  top: 30px;
+  z-index: 1000;
+  left: 0px;
+  width: 100%;
+  /* align-items: center; */
+  margin: auto;
+  justify-content: center;
+  z-index: 1;
 }
-
 
 .step-indicator {
   display: flex;
@@ -27,4 +26,34 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+.stepButton {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 992px) {
+  .stepper {
+    border-radius: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    gap: 8px;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    top: unset;
+    left: unset;
+  }
+
+  .step-indicator {
+    color: var(--White, #fff);
+    text-align: center;
+  }
 }
