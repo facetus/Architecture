@@ -6,9 +6,10 @@ import { useRecoilState } from "recoil";
 import { currentStateState } from "./state";
 import data from "./data/steps";
 import AudioPlayer from "./components/AudioPlayer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import OrientationComponent from "./components/Orientation";
+import VHSetter from "./components/VHSetter";
 
 function App() {
   const [currentState, setCurrentState] = useRecoilState(currentStateState);
@@ -25,6 +26,7 @@ function App() {
   return (
     <>
       {/* <OrientationComponent></OrientationComponent> */}
+      <VHSetter />
       <VideoPlayer currentInfo={currentInfo}></VideoPlayer>
       {currentInfo && (
         <>

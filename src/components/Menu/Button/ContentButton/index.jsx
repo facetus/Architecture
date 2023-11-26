@@ -82,7 +82,7 @@ const ContentButton = ({ currentInfo, currentState }) => {
           <span className="gr">Ζαγορίσια Αρχιτεκτονική</span>
         </>
       }
-      initActive
+      initActive={window.screen.width > 956}
       sideContent={
         <div className="sideNote">
           <div className="group">{currentInfo.group}</div>

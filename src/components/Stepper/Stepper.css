@@ -5,13 +5,15 @@
   gap: 24px;
   position: absolute;
   top: 30px;
-  z-index: 1000;
   left: 0px;
   width: 100%;
   /* align-items: center; */
   margin: auto;
   justify-content: center;
-  z-index: 1;
+}
+
+.stepper > * {
+  z-index: 2;
 }
 
 .step-indicator {
@@ -38,7 +40,16 @@
   gap: 8px;
 }
 
-@media (max-width: 992px) {
+.stepButton:hover > svg > * {
+  stroke: #666666;
+}
+
+.stepButton.inActive > svg > * {
+  stroke: #cccccc;
+}
+
+
+@media (max-width: 992px) or (max-height: 500px) {
   .stepper {
     border-radius: 200px;
     background: rgba(0, 0, 0, 0.5);

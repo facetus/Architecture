@@ -37,11 +37,15 @@
   border-radius: 26px;
   background: #326d43;
 }
+.button:hover {
+  background: #cccccc;
+}
 
 .content {
   position: absolute;
   top: 60px;
   left: 0px;
+  z-index: 5;
 }
 
 .right > div > .content {
@@ -60,7 +64,7 @@
   position: relative;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 992px) or (max-height: 500px) {
   svg > .turnWhite {
     /* fill: white !important; */
     stroke: white !important;
@@ -74,10 +78,10 @@
   }
 
   .button > .cta {
-    color: var(--White, #FFF);
+    color: var(--White, #fff);
     leading-trim: both;
     text-edge: cap;
-    
+
     /* Portal Desktop/Small Medium */
     font-family: Helvetica Neue;
     font-size: 16px;

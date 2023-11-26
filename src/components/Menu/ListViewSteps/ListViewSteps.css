@@ -26,7 +26,7 @@
   font-weight: 500;
   line-height: normal;
   margin-bottom: 8px;
-  margin-top: 40px;
+  margin-top: 25px;
   flex-wrap: wrap;
   display: flex;
   gap: 6px;
@@ -45,7 +45,7 @@
   border-width: 0px 0px 0px 2px;
   border-style: solid;
   opacity: 1;
-  transform: translateX(4.5px) translateY(-70px);
+  transform: translateX(4.5px) translateY(-60px);
   z-index: 1;
 }
 

@@ -26,11 +26,11 @@
   margin: 0.5em auto 0.5em auto;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 992px) or (max-height: 500px) {
   .center-container.bottom {
     bottom: 0px;
     height: fit-content;
-    top:unset;
+    top: unset;
   }
   .subtitle {
     left: 16px;
@@ -39,5 +39,15 @@
 
   .subtitle > div {
     margin: 0.5em auto 0.5em 0;
+  }
+}
+
+
+
+@media (max-width: 550px) {
+  .subtitle {
+    bottom: 100px;
+    max-width: 100%;
+    width: 100%;
   }
 }

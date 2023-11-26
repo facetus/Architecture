@@ -13,6 +13,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-sizing: border-box;
+  max-width: 90vw;
 }
 
 .badge-icon {
@@ -45,12 +46,17 @@
     border-radius: 200px;
     background: rgba(255, 248, 245, 0.8);
     backdrop-filter: blur(8px);
+    height: fit-content;
+    padding-right: 20px;
   }
 
   .badge-icon {
-    border-radius: 200px;
-    background: rgba(255, 248, 245, 0.8);
-    backdrop-filter: blur(8px);
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 1px 5px;
+    justify-content: center;
+    align-items: center;
   }
 
   .badge-text {
@@ -65,4 +71,12 @@
     font-weight: 500;
     line-height: normal;
   }
+
+  .center-container.badge-container {
+    justify-content: left;
+    margin: 8px;
+  }
 }
+
+
+

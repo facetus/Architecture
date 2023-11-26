@@ -4,15 +4,29 @@
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   display: flex;
-  width: 316px;
-  padding: 24px;
+  width: 364px;
+  /* padding: 24px; */
   flex-direction: column;
   align-items: flex-start;
   gap: 27px;
-  overflow: scroll;
   height: fit-content;
-  max-height: 90vh;
+  max-height: calc(100vh - 156px);
   z-index: 10;
+}
+
+.overlayHidder {
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  /* backdrop-filter: blur(6px); */
+  border-radius: 0px 0px 12px 12px;
+  left: 0px;
 }
 
 .title {
@@ -29,7 +43,6 @@
 
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 4px;
   margin: 0px;
 }
@@ -47,12 +60,25 @@
   margin: 16px;
 }
 
+.close-btn:hover > svg > * {
+  stroke: #666666;
+}
+.card-body {
+  overflow: scroll;
+  margin-left: 24px;
+  margin-right: 24px;
+  padding-bottom: 50px;
+  max-height: calc(100vh - 377px);
+  backdrop-filter: url();
+}
+
 .card-header {
   display: flex;
   padding: var(--spacing-spacing-none, 0px);
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
+  margin: 24px;
 }
 
 /* Additional styles can be added based on your requirements */
@@ -87,12 +113,16 @@
   line-height: normal;
 }
 
-@media (max-width: 992px) {
+.card-overlay {
+  display: contents;
+}
+
+@media (max-width: 992px) or (max-height: 500px) {
   .card {
     display: flex;
     width: 300px;
-    height: 390px;
-    padding: 24px;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     flex-direction: column;
     align-items: flex-start;
     gap: 27px;
@@ -100,7 +130,14 @@
     position: fixed;
     top: 0px;
     border-radius: 0px;
-    max-width: 40vw ! important;
+    max-width: 40vw !important;
+    max-height: 100vh;
+    max-height: calc(var(--vh, 1vh) * 100);
+    box-sizing: border-box;
+  }
+
+  .card-scroller {
+    height: 100%;
   }
 
   .card.left {
@@ -110,7 +147,6 @@
   .card.right {
     right: 0px;
   }
-
 
   .sideNote {
     width: fit-content;
@@ -122,5 +158,36 @@
   .sideNote > .title {
     color: white;
   }
-  
+
+  .card-body {
+    overflow: scroll;
+    margin-left: 24px;
+    margin-right: 24px;
+    padding-bottom: 50px;
+    backdrop-filter: url();
+    max-height: unset;
+  }
+
+  .card-overlay {
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    max-width: unset !important;
+    position: fixed;
+    left: 0px;
+    /* left: min(348px, calc(40vw + 48px)); */
+    z-index: 10;
+  }
+}
+
+@media (max-width: 680px) {
+  .menu-backdrop {
+    height: 180px;
+  }
+  .card {
+    max-width: 100vw !important;
+  }
 }

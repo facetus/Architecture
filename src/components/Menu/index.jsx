@@ -29,26 +29,31 @@ const Menu = ({
   }, [currentStateTimeProgress, currentInfo, currentState]);
   return (
     <>
-      <div className="menu">
-        <ProgressBar percentage={percentage} />
-        <ContentButton currentInfo={currentInfo} currentState={currentState} />
+      <div className="menu-backdrop">
+        <div className="menu">
+          <ProgressBar percentage={percentage} />
+          <ContentButton
+            currentInfo={currentInfo}
+            currentState={currentState}
+          />
 
-        <div className="right">
-          <span className="showOnSmallDevices">
-            <AutoPlayButtton />
-          </span>
-          <MuteButton />
-          <LangButton />
-          <TranscriptButton
-            currentInfo={currentInfo}
-            requestControl={requestControl}
-            resetControl={resetControl}
-          />
-          <HelpButton
-            currentInfo={currentInfo}
-            requestControl={requestControl}
-            resetControl={resetControl}
-          />
+          <div className="right">
+            <span className="showOnSmallDevices">
+              <AutoPlayButtton />
+            </span>
+            <MuteButton />
+            <LangButton />
+            <TranscriptButton
+              currentInfo={currentInfo}
+              requestControl={requestControl}
+              resetControl={resetControl}
+            />
+            <HelpButton
+              currentInfo={currentInfo}
+              requestControl={requestControl}
+              resetControl={resetControl}
+            />
+          </div>
         </div>
       </div>
 

@@ -6,7 +6,7 @@ import { currentStateState } from "../../state";
 import Loader from "../Loader";
 
 const totalSteps = 14;
-const DEBUG = true;
+const DEBUG = false;
 
 const VideoPlayer = ({ currentInfo }) => {
   const [currentState, setCurrentState] = useRecoilState(currentStateState);
@@ -46,14 +46,13 @@ const VideoPlayer = ({ currentInfo }) => {
 
   useEffect(() => {
     if (currentInfo) {
-      console.log("hi", currentInfo)
       videoRef.current.currentTime = currentInfo.fromTime;
       videoRef.current.play();
     }
   }, [currentState]);
 
   useEffect(() => {
-    if (DEBUG) {
+    if (!DEBUG) {
       const xhr = new XMLHttpRequest();
       xhr.withCredentials = true;
       xhr.responseType = "blob";
@@ -76,7 +75,7 @@ const VideoPlayer = ({ currentInfo }) => {
 
       // Check if the video is already in the cache
       const cacheTest = new Image();
-      cacheTest.src = "http://localhost:3000/media/video/beta1.0.mp4";
+      cacheTest.src = "/media/video/beta1.0.mp4";
       cacheTest.onload = function () {
         console.log("Video is already cached.");
         // Perform actions when the video is already cached
@@ -84,11 +83,11 @@ const VideoPlayer = ({ currentInfo }) => {
 
       // Perform the XMLHttpRequest if the video is not in the cache
       if (!cacheTest.complete) {
-        xhr.open("GET", "http://localhost:3000/media/video/beta1.0.mp4");
+        xhr.open("GET", "/media/video/beta1.0.mp4");
         xhr.send();
       }
     } else {
-      videoRef.current.src = URL.createObjectURL("/media/video/beta1.0.mp4");
+      videoRef.current.src = "/media/video/beta1.0.mp4";
     }
   }, []);
 

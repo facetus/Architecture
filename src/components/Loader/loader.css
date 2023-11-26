@@ -2,6 +2,7 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   z-index: 10;
   background-image: none;
   transition: transform 1s ease-in-out 0.5s;
@@ -11,6 +12,7 @@
   position: absolute;
   width: 100vw;
   height: 200vh;
+  height: calc(var(--vh, 1vh) * 200);
   z-index: 10;
   background-image: linear-gradient(
     180deg,
@@ -23,6 +25,7 @@
 
 #container-loader.hidden {
   transform: translateY(-300vh);
+  transform: translateY(calc(-var(--vh, 1vh) * 300));
 }
 
 #loader > .building {
@@ -32,10 +35,12 @@
   position: absolute;
   transition: transform 0.5s ease;
   max-width: min(80vw, calc(3.5*30vh));
+  max-width: min(80vw, calc(calc(var(--vh, 1vh) * 105)));
 }
 
 #loader > .building.bottom {
-  bottom: min(80px, 4vh);
+  /* bottom: min(80px, 4vh); */
+  bottom: calc(100vh - var(--vh, 1vh) * 96 );
 }
 
 #loader > .building.left {

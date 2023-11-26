@@ -7,13 +7,13 @@ function showAnimation(divElement) {
     const tl = gsap.timeline({});
 
     tl.from(divElement, {
-      y: "-200%", // Start off-screen above
+      y: "-100dvh", // Start off-screen above
       duration: 1, // Animation duration
       ease: "power2.inOut", // Easing function
     })
       .to(divElement, {
         scale: 1.05, // Slight pop in scale
-        y: "70%",
+        y: window.screen.width < 410 ? "100px" : "0",
         duration: 0.2,
         ease: "power2.inOut",
       })
@@ -26,25 +26,31 @@ function showAnimation(divElement) {
 
 const icon = (
   <svg
-    width="40"
-    height="40"
-    viewBox="0 0 40 40"
-    fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    width="26"
+    height="40"
+    viewBox="0 0 26 40"
+    fill="none"
+    className="badge-icon"
   >
     <path
-      d="M20 25.0001C26.4433 25.0001 31.6666 19.7767 31.6666 13.3334C31.6666 6.89009 26.4433 1.66675 20 1.66675C13.5567 1.66675 8.33331 6.89009 8.33331 13.3334C8.33331 19.7767 13.5567 25.0001 20 25.0001Z"
-      stroke="#B73F08"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M6.68329 23.1501L4.66663 38.3334L13 33.3334L21.3333 38.3334L19.3166 23.1334"
+      fill="#FCDACB"
     />
     <path
-      d="M13.6834 23.15L11.6667 38.3333L20 33.3333L28.3334 38.3333L26.3167 23.1333"
+      d="M6.68329 23.1501L4.66663 38.3334L13 33.3334L21.3333 38.3334L19.3166 23.1334"
       stroke="#B73F08"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M12.9999 25.0001C19.4432 25.0001 24.6666 19.7767 24.6666 13.3334C24.6666 6.89009 19.4432 1.66675 12.9999 1.66675C6.5566 1.66675 1.33325 6.89009 1.33325 13.3334C1.33325 19.7767 6.5566 25.0001 12.9999 25.0001Z"
+      fill="#FCDACB"
+      stroke="#B73F08"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
   </svg>
 );
@@ -70,7 +76,7 @@ const Badge = ({ badges, currentStateTimeProgress }) => {
   }, [currentBadge]);
 
   return (
-    <div className="top center-container">
+    <div className="top center-container badge-container">
       <div
         ref={badgeRef}
         className={
