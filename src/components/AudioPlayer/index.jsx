@@ -79,7 +79,7 @@ const AudioPlayer = ({
     }
 
     const width = window.screen.width;
-    const charSize = 10;
+    const charSize = 20;
     const space = width > 550 ? 0.5 : 0.9;
     let acc = [];
     let line = "";

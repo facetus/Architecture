@@ -6,7 +6,7 @@ import { currentStateState } from "../../state";
 import Loader from "../Loader";
 
 const totalSteps = 14;
-const DEBUG = false;
+const DEBUG = true;
 
 const VideoPlayer = ({ currentInfo }) => {
   const [currentState, setCurrentState] = useRecoilState(currentStateState);
