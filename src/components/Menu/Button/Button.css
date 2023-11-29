@@ -37,8 +37,11 @@
   border-radius: 26px;
   background: #326d43;
 }
-.button:hover {
-  background: #cccccc;
+
+@media (hover: hover) {
+  .button:hover {
+    background: #cccccc;
+  }
 }
 
 .content {
@@ -54,10 +57,13 @@
 }
 
 .sideContent {
-  position: absolute;
+  display: flex;
+  /* position: absolute; */
   top: 0px;
   left: 60px;
   height: 60px;
+  order: 0;
+  flex: 1;
 }
 
 .button-container {
@@ -65,28 +71,27 @@
 }
 
 @media (max-width: 992px) or (max-height: 500px) {
-  svg > .turnWhite {
-    /* fill: white !important; */
-    stroke: white !important;
-  }
-  svg > .fill {
-    fill: white !important;
-    /* stroke: white !important; */
-  }
-  .button {
+  .button:not(.loaderContent .button) {
     background: none !important;
   }
 
   .button > .cta {
-    color: var(--White, #fff);
-    leading-trim: both;
-    text-edge: cap;
+    font-size: 14px;
+  }
 
-    /* Portal Desktop/Small Medium */
-    font-family: Helvetica Neue;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+  .sideContent {
+    order: 1;
+    width: 100%;
+    margin: 0px 10px;
+    justify-content: space-between;
+    flex: unset;
+  }
+
+  .sideContent .button-container {
+    width: 150px;
+  }
+
+  .right {
+    order: 0;
   }
 }

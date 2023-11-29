@@ -9,3 +9,9 @@ export const autoPlayState = atom({
   key: 'autoPlayState',
   default: true,
 });
+
+
+// export const muteState = atom({
+//   key: 'muteStateState',
+//   default: true,
+// });

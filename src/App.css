@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+
+*:focus {
+  outline: none;
+}
+
 body {
   overflow: hidden;
 }
@@ -93,3 +98,5 @@ body {
     top: 66px;
   }
 }
+
+

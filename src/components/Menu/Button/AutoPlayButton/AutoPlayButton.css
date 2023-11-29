@@ -2,10 +2,6 @@
   transition: x 0.3s ease;
 }
 
-.button:hover .outer-rect {
-  fill: #343434;
-}
-
 .button.selected .outer-rect {
   fill: #1b7b06;
 }
@@ -15,6 +11,12 @@
   fill: white;
 }
 
-.button.selected:hover .outer-rect {
-  fill: #375330;
+@media (hover: hover) {
+  .button:hover .outer-rect {
+    fill: #343434;
+  }
+
+  .button.selected:hover .outer-rect {
+    fill: #375330;
+  }
 }

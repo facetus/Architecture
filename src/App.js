@@ -14,6 +14,7 @@ import VHSetter from "./components/VHSetter";
 function App() {
   const [currentState, setCurrentState] = useRecoilState(currentStateState);
   const [currentStateTimeProgress, setCurrentStateTimeProgress] = useState(0);
+  const [preloadedDataList, setPreloadedDataList] = useState({});
 
   const currentInfo = data.find(({ id }) => {
     return id === currentState;
@@ -23,29 +24,38 @@ function App() {
     setCurrentState(currentState + 1);
   };
 
+  useEffect(() => {
+    console.log(preloadedDataList);
+  }, [preloadedDataList]);
+
   return (
     <>
       {/* <OrientationComponent></OrientationComponent> */}
+      <Loader
+        preloadedDataList={preloadedDataList}
+        setPreloadedDataList={setPreloadedDataList}
+        setCurrentState={setCurrentState}
+      ></Loader>
       <VHSetter />
-      <VideoPlayer currentInfo={currentInfo}></VideoPlayer>
+      <VideoPlayer
+        currentInfo={currentInfo}
+        preloadedDataList={preloadedDataList}
+      ></VideoPlayer>
+      <AudioPlayer
+        audioId={currentState}
+        currentState={currentState}
+        currentInfo={currentInfo}
+        setCurrentStateTimeProgress={setCurrentStateTimeProgress}
+        moveNext={moveNext}
+        preloadedDataList={preloadedDataList}
+      ></AudioPlayer>
       {currentInfo && (
         <>
-          <AudioPlayer
-            audioId={currentState}
-            currentState={currentState}
-            currentInfo={currentInfo}
-            setCurrentStateTimeProgress={setCurrentStateTimeProgress}
-            moveNext={moveNext}
-          ></AudioPlayer>
           <Menu
             currentState={currentState}
             currentInfo={currentInfo}
             currentStateTimeProgress={currentStateTimeProgress}
           ></Menu>
-          <Badge
-            badges={currentInfo.badge}
-            currentStateTimeProgress={currentStateTimeProgress}
-          />
         </>
       )}
     </>

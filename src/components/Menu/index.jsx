@@ -8,6 +8,7 @@ import ContentButton from "./Button/ContentButton";
 import HelpButton from "./Button/HelpButton";
 import { totalStates } from "../../data/steps";
 import AutoPlayButtton from "./Button/AutoPlayButton";
+import Badge from "../Badge";
 
 const Menu = ({
   onButtonOneClick,
@@ -38,9 +39,6 @@ const Menu = ({
           />
 
           <div className="right">
-            <span className="showOnSmallDevices">
-              <AutoPlayButtton />
-            </span>
             <MuteButton />
             <LangButton />
             <TranscriptButton
@@ -54,6 +52,11 @@ const Menu = ({
               resetControl={resetControl}
             />
           </div>
+
+          <Badge
+            badges={currentInfo ? currentInfo.badge : []}
+            currentStateTimeProgress={currentStateTimeProgress}
+          />
         </div>
       </div>
 

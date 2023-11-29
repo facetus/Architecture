@@ -45,28 +45,32 @@ const Button = ({
   }, [isActive]);
 
   return (
-    <div className={"button-container " + className}>
-      <div className={classNamesList.join(" ")} onClick={handleClick}>
-        {cta && <div className="cta">{cta}</div>}
-        <div className="icon">{isActive && activeIcon ? activeIcon : icon}</div>
+    <>
+      <div className={"button-container " + className}>
+        <div className={classNamesList.join(" ")} onClick={handleClick}>
+          {cta && <div className="cta">{cta}</div>}
+          <div className="icon">
+            {isActive && activeIcon ? activeIcon : icon}
+          </div>
+        </div>
+
+        {isActive && title && (
+          <div className="content">
+            <Card
+              onClose={() => {
+                setIsActive(false);
+              }}
+              title={title}
+              className={cardClassName}
+            >
+              {children}
+            </Card>
+          </div>
+        )}
       </div>
 
       {sideContent && <div className="sideContent">{sideContent}</div>}
-
-      {isActive && title && (
-        <div className="content">
-          <Card
-            onClose={() => {
-              setIsActive(false);
-            }}
-            title={title}
-            className={cardClassName}
-          >
-            {children}
-          </Card>
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 

@@ -11,7 +11,7 @@
   line-height: 1em; /* 27px */
   position: absolute;
   bottom: 0px;
-  width: 50%;
+  width: 60vw;
 }
 
 .subtitle > div {
@@ -34,7 +34,7 @@
   }
   .subtitle {
     left: 16px;
-    width: 80vw;
+    width: calc(100vw - 232px);
   }
 
   .subtitle > div {
@@ -48,6 +48,6 @@
   .subtitle {
     bottom: 100px;
     max-width: 100%;
-    width: 100%;
+    width: calc(100vw - 32px);
   }
 }

@@ -59,9 +59,10 @@
   right: 0px;
   margin: 16px;
 }
-
-.close-btn:hover > svg > * {
-  stroke: #666666;
+@media (hover: hover) {
+  .close-btn:hover > svg > * {
+    stroke: #666666;
+  }
 }
 .card-body {
   overflow: scroll;
@@ -151,12 +152,6 @@
   .sideNote {
     width: fit-content;
     white-space: nowrap;
-  }
-  .sideNote > .group {
-    color: white;
-  }
-  .sideNote > .title {
-    color: white;
   }
 
   .card-body {

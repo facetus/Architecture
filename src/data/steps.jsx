@@ -196,6 +196,10 @@ const data = [
   // },
   {
     id: 1,
+    audio: {
+      gr: "/media/audio/gr/1.m4a",
+      en: "/media/audio/en/1.m4a"
+    },
     group: (
       <>
         <span className="gr">Δόμηση</span>
@@ -257,6 +261,10 @@ const data = [
   },
   {
     id: 2,
+    audio: {
+      gr: "/media/audio/gr/2.m4a",
+      en: "/media/audio/en/2.m4a"
+    },
     group: (
       <>
         <span className="gr">Εσωτερική Αρχιτεκτονική</span>
@@ -314,6 +322,10 @@ const data = [
   },
   {
     id: 3,
+    audio: {
+      gr: "/media/audio/gr/3.m4a",
+      en: "/media/audio/en/3.m4a"
+    },
     group: (
       <>
         <span className="gr">Εσωτερική Αρχιτεκτονική</span>
@@ -367,6 +379,10 @@ const data = [
   },
   {
     id: 4,
+    audio: {
+      gr: "/media/audio/gr/4.m4a",
+      en: "/media/audio/en/4.m4a"
+    },
     group: (
       <>
         <span className="gr">Λειτουργικής Αρχιτεκτονικής</span>
@@ -425,6 +441,10 @@ const data = [
   },
   {
     id: 5,
+    audio: {
+      gr: "/media/audio/gr/5.m4a",
+      en: "/media/audio/en/5.m4a"
+    },
     group: (
       <>
         <span className="gr">Λειτουργικής Αρχιτεκτονικής</span>
@@ -483,6 +503,10 @@ const data = [
 
   {
     id: 6,
+    audio: {
+      gr: "/media/audio/gr/6.m4a",
+      en: "/media/audio/en/6.m4a"
+    },
     group: (
       <>
         <span className="gr">Λειτουργικής Αρχιτεκτονικής</span>
@@ -540,6 +564,10 @@ const data = [
   },
   {
     id: 7,
+    audio: {
+      gr: "/media/audio/gr/7.m4a",
+      en: "/media/audio/en/7.m4a"
+    },
     group: (
       <>
         <span className="gr">Λεπτομέρειες</span>
@@ -597,6 +625,10 @@ const data = [
   },
   {
     id: 8,
+    audio: {
+      gr: "/media/audio/gr/8.m4a",
+      en: "/media/audio/en/8.m4a"
+    },
     group: (
       <>
         <span className="gr">Αυλή</span>
@@ -654,6 +686,10 @@ const data = [
   },
   {
     id: 9,
+    audio: {
+      gr: "/media/audio/gr/9.m4a",
+      en: "/media/audio/en/9.m4a"
+    },
     group: (
       <>
         <span className="gr">Αυλή</span>
@@ -711,6 +747,10 @@ const data = [
   },
   {
     id: 10,
+    audio: {
+      gr: "/media/audio/gr/10.m4a",
+      en: "/media/audio/en/10.m4a"
+    },
     group: (
       <>
         <span className="gr">Ο Οικισμός</span>
@@ -768,6 +808,10 @@ const data = [
   },
   {
     id: 14,
+    audio: {
+      gr: "/media/audio/gr/14.m4a",
+      en: "/media/audio/en/14.m4a"
+    },
     group: (
       <>
         <span className="gr">Ο Οικισμός</span>

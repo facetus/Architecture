@@ -53,13 +53,13 @@ const LangButton = () => {
       ? ".gr { display: none ! important}"
       : ".en { display: none ! important}";
   };
-
   return (
     <Button
       icon={elIcon}
       activeIcon={enIcon}
       changeToActiveColors={false}
       onChangeHandler={changeLang}
+      initActive={document.getElementById("langStyle").innerText.includes(".gr")}
     ></Button>
   );
 };

@@ -4,7 +4,7 @@
   align-items: center;
   gap: 24px;
   position: absolute;
-  top: 30px;
+  top: 16px;
   left: 0px;
   width: 100%;
   /* align-items: center; */
@@ -40,14 +40,15 @@
   gap: 8px;
 }
 
-.stepButton:hover > svg > * {
-  stroke: #666666;
+@media (hover: hover) {
+  .stepButton:hover > svg > * {
+    stroke: #666666;
+  }
 }
 
 .stepButton.inActive > svg > * {
   stroke: #cccccc;
 }
-
 
 @media (max-width: 992px) or (max-height: 500px) {
   .stepper {
@@ -66,5 +67,8 @@
   .step-indicator {
     color: var(--White, #fff);
     text-align: center;
+  }
+  .stepButton .turnWhite {
+    stroke: white;
   }
 }

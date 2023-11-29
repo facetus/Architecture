@@ -39,45 +39,46 @@ const unMute = (
     <path
       d="M10 1L5 5H1V11H5L10 15V1Z"
       stroke="#272727"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="turnWhite"
     />
     <path
       d="M22 5L16 11"
       stroke="#272727"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="turnWhite"
     />
     <path
       d="M16 5L22 11"
       stroke="#272727"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="turnWhite"
     />
   </svg>
 );
 
-const onChangeHandler = (change) => {
-  console.log(change);
-  console.log(document.getElementById("audio-player"));
-  document.getElementById("audio-player").muted = change;
-};
-
 const MuteButton = () => {
-  return (
-    <Button
-      icon={mute}
-      activeIcon={unMute}
-      changeToActiveColors={false}
-      onChangeHandler={onChangeHandler}
-    ></Button>
-  );
+  const onChangeHandler = (change) => {
+    const audioPlayer = document.getElementById("audio-player");
+    if (audioPlayer) audioPlayer.muted = change;
+  };
+
+  if (document.getElementById("audio-player"))
+    return (
+      <Button
+        icon={mute}
+        activeIcon={unMute}
+        changeToActiveColors={false}
+        onChangeHandler={onChangeHandler}
+        initActive={document.getElementById("audio-player").muted}
+      ></Button>
+    );
 };
 
 export default MuteButton;

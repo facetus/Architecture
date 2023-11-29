@@ -24,9 +24,9 @@
   background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-.menu > div {
-  /* z-index: 2; */
-}
+/* .menu > * {
+  z-index: 1;
+} */
 
 .menu > .right {
   display: flex;
@@ -45,20 +45,15 @@
 
 @media (max-width: 992px) or (max-height: 500px) {
   .menu-backdrop {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0) 100%
-    );
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.00) 100%);
   }
 }
 
 @media (max-width: 680px) {
   .menu > .right {
-    width: 100vw;
     flex-wrap: wrap;
     justify-content: right;
-    max-width: 35vw;
+    order: 0;
   }
   .menu-backdrop {
     height: 180px;
@@ -68,9 +63,9 @@
 
 @media (max-width: 410px) {
   .menu > .right {
-    width: 100vw;
     flex-wrap: wrap;
     justify-content: right;
     max-width: unset;
+    order: 0;
   }
 }

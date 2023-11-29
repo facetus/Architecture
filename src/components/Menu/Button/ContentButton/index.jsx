@@ -1,6 +1,7 @@
 import React from "react";
 import Button from ".."; // Assuming you have a Button component
 import ListViewSteps from "../../ListViewSteps";
+import AutoPlayButtton from "../AutoPlayButton";
 
 const contentIcon = (
   <svg
@@ -77,17 +78,23 @@ const ContentButton = ({ currentInfo, currentState }) => {
       changeToActiveColors={true}
       cardClassName={"left"}
       title={
-        <>
-          <img src="/media/icons/logo.svg" className="logo" />{" "}
-          <span className="gr">Ζαγορίσια Αρχιτεκτονική</span>
-        </>
+        <div className="logoContainer">
+          <img src="/media/icons/logo.svg" className="logo" />
+          <span className="gr">Ζαγορίσια Αρχιτεκοτνική</span>
+          <span className="en">Zagorochoria Architecture</span>
+        </div>
       }
       initActive={window.screen.width > 956}
       sideContent={
-        <div className="sideNote">
-          <div className="group">{currentInfo.group}</div>
-          <div className="title">{currentInfo.title}</div>
-        </div>
+        <>
+          <div className="sideNote">
+            <div className="group">{currentInfo.group}</div>
+            <div className="title">{currentInfo.title}</div>
+          </div>
+          <span className="showOnSmallDevices">
+            <AutoPlayButtton />
+          </span>
+        </>
       }
     >
       <ListViewSteps currentState={currentState}></ListViewSteps>

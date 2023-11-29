@@ -34,13 +34,13 @@
   flex-shrink: 0;
   position: absolute;
   transition: transform 0.5s ease;
-  max-width: min(80vw, calc(3.5*30vh));
+  max-width: min(80vw, calc(3.5 * 30vh));
   max-width: min(80vw, calc(calc(var(--vh, 1vh) * 105)));
 }
 
 #loader > .building.bottom {
   /* bottom: min(80px, 4vh); */
-  bottom: calc(100vh - var(--vh, 1vh) * 96 );
+  bottom: calc(100vh - var(--vh, 1vh) * 96);
 }
 
 #loader > .building.left {
@@ -71,24 +71,68 @@
 }
 
 .loaderBar {
-  border-radius: 80px;
-  background: var(--color-grey-100, #e5e5e5);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   display: flex;
-  height: 4px;
-  flex-direction: column;
-  align-items: flex-start;
+  height: 44px;
+  justify-content: left;
+  align-items: left;
   gap: 8px;
   align-self: stretch;
+  border-radius: 48px;
+  background: var(--color-grey-400, #999);
   box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
 }
 
+.loaderBar > .cta {
+  color: #cccccc;
+  leading-trim: both;
+  text-edge: cap;
+
+  /* Portal Desktop/Baseline */
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  margin: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.loaderBar.active > .cta {
+  color: var(--White, #fff);
+}
+
+.logoContainer {
+  color: var(--Blackish, #272727);
+  leading-trim: both;
+  text-edge: cap;
+
+  /* Portal Desktop/Heading 3 */
+  font-family: Literata;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (hover: hover) {
+  .loaderBar.active > .progressBar:hover {
+    background: #375330;
+    cursor: pointer;
+  }
+}
 .progressBar {
-  flex: 1 0 0;
-  border-radius: 20px;
-  background: linear-gradient(270deg, #b73f08 -164.3%, #fbc4ac 99.29%);
+  height: 100%;
+  background: var(--Green-link, #1b7b06);
   box-sizing: border-box;
+  position: absolute;
+  z-index: 1;
+  transition: width 0.3s ease-in-out;
 }
 
 .loaderContent {
@@ -97,9 +141,28 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 16px;
+  max-width: calc(100vw - 16px);
   transition: opacity 0.2s ease-in;
+}
+
+.loaderContent > img {
+  max-width: 100%;
 }
 
 #loader.hidden .loaderContent {
   opacity: 0;
+}
+
+.loaderControl {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+
+.loaderControl > div {
+  flex-grow: 1;
+}
+
+.loaderControl .button {
+  width: 100% !important;
 }
