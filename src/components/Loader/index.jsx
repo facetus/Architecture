@@ -54,7 +54,6 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
       });
     };
 
-
     preloadList.forEach((url) => {
       const chunks = [];
       const xhr = new XMLHttpRequest();
@@ -92,13 +91,27 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
     });
   }, [setPreloadedDataList]);
 
+  const getUrl = (id) => {
+    console.log(window.screen.availWidth);
+    return window.screen.availWidth < 600
+      ? `/media/icons/building-${id}-small.png`
+      : `/media/icons/building-${id}.svg`;
+  };
+
   return (
     <div id="container-loader" className={start ? "hidden" : "show"}>
       <div id="loader" className={start ? "hidden" : "show"}>
-        <img src="/media/icons/building-1.svg" className="building top right" />
         <img
-          src="/media/icons/building-2.svg"
+          src={getUrl(1)}
+          className="building top right"
+          alt=""
+          width="100vw"
+        />
+        <img
+          src={getUrl(2)}
           className="building bottom left"
+          width="100vw"
+          alt=""
         />
         <div className="center-container middle">
           <div className="loaderContent">

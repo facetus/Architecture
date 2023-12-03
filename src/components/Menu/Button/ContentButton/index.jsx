@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from ".."; // Assuming you have a Button component
 import ListViewSteps from "../../ListViewSteps";
 import AutoPlayButtton from "../AutoPlayButton";
@@ -70,13 +70,19 @@ const contentIconActive = (
   </svg>
 );
 
-const ContentButton = ({ currentInfo, currentState, setC }) => {
+const ContentButton = ({ currentInfo, currentState }) => {
+  const [reset, setReset] = useState(window.screen.width > 956);
+  useEffect(() => {
+    if (window.screen.width > 956) return;
+    setReset(!reset);
+  }, [currentState]);
   return (
     <Button
       icon={contentIcon}
       activeIcon={contentIconActive}
       changeToActiveColors={true}
       cardClassName={"left"}
+      resetControl={reset}
       title={
         <div className="logoContainer">
           <img src="/media/icons/logo.svg" className="logo" />
