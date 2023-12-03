@@ -67,7 +67,6 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
       });
 
       xhr.addEventListener("readystatechange", function () {
-        console.error(this.status);
         if (this.status === 206) {
           chunks.push(this.response);
         } else if (this.readyState === 4) {
