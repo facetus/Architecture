@@ -24,10 +24,6 @@ function App() {
     setCurrentState(currentState + 1);
   };
 
-  useEffect(() => {
-    console.log(preloadedDataList);
-  }, [preloadedDataList]);
-
   return (
     <>
       {/* <OrientationComponent></OrientationComponent> */}

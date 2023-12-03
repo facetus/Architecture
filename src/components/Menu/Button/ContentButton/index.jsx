@@ -70,7 +70,7 @@ const contentIconActive = (
   </svg>
 );
 
-const ContentButton = ({ currentInfo, currentState }) => {
+const ContentButton = ({ currentInfo, currentState, setC }) => {
   return (
     <Button
       icon={contentIcon}
@@ -80,7 +80,7 @@ const ContentButton = ({ currentInfo, currentState }) => {
       title={
         <div className="logoContainer">
           <img src="/media/icons/logo.svg" className="logo" />
-          <span className="gr">Ζαγορίσια Αρχιτεκοτνική</span>
+          <span className="gr">Ζαγορίσια Αρχιτεκτονική</span>
           <span className="en">Zagorochoria Architecture</span>
         </div>
       }

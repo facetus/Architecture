@@ -14,6 +14,15 @@
   flex-wrap: wrap;
   display: flex;
   gap: 6px;
+  height: 20px;
+}
+
+.title-style > div > .gr {
+  cursor: pointer;
+}
+
+.title-style > div > .en {
+  cursor: pointer;
 }
 
 .group-style {
@@ -40,16 +49,21 @@
 
 .borderLeft {
   height: 75px;
-  position: fixed;
+  position: sticky;
   border-color: #326d43;
   border-width: 0px 0px 0px 2px;
   border-style: solid;
   opacity: 1;
-  transform: translateX(4.5px) translateY(-60px);
+  transform: translateX(-12.5px) translateY(-60px);
   z-index: 1;
 }
 
 .active > .borderLeft {
+  border-color: var(--Dark-orange, #b73f08);
+  z-index: 100;
+}
+
+.past > .borderLeft {
   border-color: var(--Dark-orange, #b73f08);
   z-index: 100;
 }
@@ -66,6 +80,18 @@
   font-weight: 500;
   line-height: normal;
 }
+.title-style.past > div {
+  color: var(--color-grey-600, #666);
+  leading-trim: both;
+  text-edge: cap;
+  
+  /* Portal Desktop/Small Regular */
+  font-family: Helvetica Neue;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+}
 
 .title-style > div > svg {
   fill: var(--Dark-orange, #326d43);
@@ -75,7 +101,11 @@
   fill: var(--Dark-orange, #b73f08);
 }
 
+.title-style.past > div > svg {
+  fill: var(--Dark-orange, #b73f08);
+}
+
+
 .list-view > div:nth-child(1) > .group-style {
   margin-top: 8px;
 }
-

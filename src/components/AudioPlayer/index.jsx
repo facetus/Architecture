@@ -151,13 +151,13 @@ const AudioPlayer = ({
 
   // Audio play and cleanup
   useEffect(() => {
-    console.log("audio", currentInfo);
     if (currentInfo && currentInfo.audio) {
       if (document.getElementById("langStyle").innerText.includes(".gr")) {
         audioPlayerRef.current.src = preloadedDataList[currentInfo.audio.en];
       } else {
         audioPlayerRef.current.src = preloadedDataList[currentInfo.audio.gr];
       }
+      audioPlayerRef.current.playbackRate=  Number(window.location.search.substr(1).split("audioSpeed=")[1]) || 1;
       audioPlayerRef.current.play().catch((err) => {
         console.log(err);
       });

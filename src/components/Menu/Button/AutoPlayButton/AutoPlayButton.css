@@ -7,7 +7,7 @@
 }
 
 .button.selected .inner-rect {
-  x: 13;
+  x: 13px;
   fill: white;
 }
 

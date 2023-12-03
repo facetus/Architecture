@@ -51,11 +51,7 @@ const VideoPlayer = ({ currentInfo, preloadedDataList }) => {
     <>
       <div className="video-container">
         <div className="vignette-overlay"></div>
-        <video ref={videoRef} playsInline preload="auto" src={preloadedDataList["/media/video/beta1.0.mp4"]}>
-          {/* <source
-            src={preloadedDataList["/media/video/beta1.0.mp4"]}
-            type="video/mp4"
-          /> */}
+        <video ref={videoRef} playsInline preload="auto" src={preloadedDataList["/media/video/final.1.0.mp4"]}>
         </video>
         <Stepper
           currentStep={currentState}

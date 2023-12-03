@@ -8,7 +8,6 @@
   /* padding: 24px; */
   flex-direction: column;
   align-items: flex-start;
-  gap: 27px;
   height: fit-content;
   max-height: calc(100vh - 156px);
   z-index: 10;
@@ -121,12 +120,11 @@
 @media (max-width: 992px) or (max-height: 500px) {
   .card {
     display: flex;
-    width: 300px;
+    width: 350px;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     flex-direction: column;
     align-items: flex-start;
-    gap: 27px;
     flex-shrink: 0;
     position: fixed;
     top: 0px;

@@ -38,7 +38,9 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
+
 
 @media (hover: hover) {
   .stepButton:hover > svg > * {

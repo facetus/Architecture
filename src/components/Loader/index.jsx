@@ -16,13 +16,9 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
     })
     .flat();
 
-  const preloadList = ["/media/video/beta1.0.mp4", ...audioList];
+  const preloadList = ["/media/video/final.1.0.mp4", ...audioList];
 
   const totalPreloadingItems = preloadList.length;
-
-  useEffect(() => {
-    console.log(progress);
-  }, [progress]);
 
   useEffect(() => {
     setProgress(
@@ -58,9 +54,10 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
       });
     };
 
+
     preloadList.forEach((url) => {
+      const chunks = [];
       const xhr = new XMLHttpRequest();
-      xhr.withCredentials = true;
       xhr.responseType = "blob";
 
       xhr.addEventListener("progress", function (e) {
@@ -70,11 +67,25 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
       });
 
       xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-          addUrlMapping(url, URL.createObjectURL(xhr.response));
+        console.error(this.status);
+        if (this.status === 206) {
+          chunks.push(this.response);
+        } else if (this.readyState === 4) {
+          if (this.status === 200) {
+            chunks.push(this.response);
+            const blob = new Blob(chunks, {
+              type: xhr.getResponseHeader("Content-Type"),
+            });
+            addUrlMapping(url, URL.createObjectURL(blob));
+          }
         } else {
           addProgress(url, { loaded: 0, total: 0 });
         }
+      });
+
+      xhr.addEventListener("error", function (e) {
+        console.error(this.status);
+        // Handle the error here, such as displaying an error message or taking appropriate action.
       });
 
       xhr.open("GET", url);

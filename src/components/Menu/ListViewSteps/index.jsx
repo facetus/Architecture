@@ -1,6 +1,8 @@
 import React from "react";
 import "./ListViewSteps.css"; // Import your CSS file
 import data from "../../../data/steps"; // Import your JSON file
+import { currentStateState } from "../../../state";
+import { useRecoilState } from "recoil";
 
 const bullet = (
   <div className="bullet">
@@ -18,7 +20,12 @@ const bullet = (
 
 const emptyBullet = <div className="bullet"></div>;
 
-const ListViewSteps = ({ currentState }) => {
+const ListViewSteps = () => {
+  const [currentState, setCurrentState] = useRecoilState(currentStateState);
+
+  const selecteNewState = (id) => () => {
+    setCurrentState(id);
+  };
   const renderList = () => {
     let prevGroup = "";
 
@@ -36,12 +43,16 @@ const ListViewSteps = ({ currentState }) => {
             <div
               key={index}
               className={
-                id <= currentState ? "active title-style" : "title-style"
+                id < currentState
+                  ? "past title-style"
+                  : id === currentState
+                  ? "active title-style"
+                  : "title-style"
               }
             >
               {bullet}
               {index > 0 && <div className="borderLeft"></div>}
-              <div>{title}</div>
+              <div onClick={selecteNewState(id)}>{title}</div>
             </div>
           </div>
         );
@@ -50,11 +61,17 @@ const ListViewSteps = ({ currentState }) => {
       return (
         <div
           key={index}
-          className={id <= currentState ? "active title-style" : "title-style"}
+          className={
+            id < currentState
+              ? "past title-style"
+              : id === currentState
+              ? "active title-style"
+              : "title-style"
+          }
         >
           {bullet}
           <div className="borderLeft"></div>
-          <div>{title}</div>
+          <div onClick={selecteNewState(id)}>{title}</div>
         </div>
       );
     });

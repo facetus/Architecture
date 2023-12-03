@@ -36,6 +36,7 @@ const Menu = ({
           <ContentButton
             currentInfo={currentInfo}
             currentState={currentState}
+            setC
           />
 
           <div className="right">
