@@ -24,7 +24,12 @@ const VideoPlayer = ({ currentInfo, preloadedDataList }) => {
     // Start playing audio when component mounts
     const vid = videoRef.current;
     if (currentInfo && vid) {
-      vid.volume = 0.3;
+      if (document.getElementById("langStyle").innerText.includes(".gr")) {
+        vid.volume = 0.05;
+      } else {
+        vid.volume = 0.1;
+      }
+      vid.volume = 0.1;
       const handleTimeUpdate = () => {
         if (vid.currentTime >= currentInfo.toTime) {
           videoRef.current.currentTime = currentInfo.toTime;

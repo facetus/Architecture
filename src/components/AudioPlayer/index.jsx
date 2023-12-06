@@ -154,10 +154,12 @@ const AudioPlayer = ({
     if (currentInfo && currentInfo.audio) {
       if (document.getElementById("langStyle").innerText.includes(".gr")) {
         audioPlayerRef.current.src = preloadedDataList[currentInfo.audio.en];
+        audioPlayerRef.current.volume = 1;
       } else {
         audioPlayerRef.current.src = preloadedDataList[currentInfo.audio.gr];
+        audioPlayerRef.current.volume = 0.4;
       }
-      audioPlayerRef.current.playbackRate=  Number(window.location.search.substr(1).split("audioSpeed=")[1]) || 1;
+      audioPlayerRef.current.playbackRate = 1;
       audioPlayerRef.current.play().catch((err) => {
         console.log(err);
       });

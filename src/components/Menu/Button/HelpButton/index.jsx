@@ -60,7 +60,12 @@ const HelpButton = ({ currentInfo, requestControl, resetControl }) => {
       icon={help}
       activeIcon={helpActive}
       changeToActiveColors={true}
-      title={"Γλωσσάρι"}
+      title={
+        <>
+          <span className="gr">Γλωσσάρι</span>
+          <span className="en">Glossary</span>
+        </>
+      }
       cardClassName={"help right"}
       requestControl={requestControl}
       resetControl={resetControl}
@@ -149,10 +154,81 @@ const HelpButton = ({ currentInfo, requestControl, resetControl }) => {
             <span className="bold">Χαγιάτι</span> – Ο χώρος εισόδου στο ισόγειο
           </div>
         </span>
+
         <span className="en">
-          <div>
-            Απεράτης ή περάτης – Ξύλινη αμπάρα για την ασφάλιση της εξώπορτας
-            ενός σπιτιού
+          <div className="line">
+            <span className="bold">Aperatis or peratis</span> – Wooden bar for
+            securing the exterior door of a house
+          </div>
+          <div className="line">
+            <span className="bold">Arcades</span> – White stones in the
+            pavement, set vertically, to restrain animals and people on downhill
+            slopes; also the parapets of bridges
+          </div>
+          <div className="line">
+            <span className="bold">Achoori</span> – Ground-level space for
+            animals (in the main house or in shelters)
+          </div>
+          <div className="line">
+            <span className="bold">Corner</span> – The fireplace
+          </div>
+          <div className="line">
+            <span className="bold">Cellar</span> – Ground-level space of the
+            house, storage
+          </div>
+          <div className="line">
+            <span className="bold">Chioses</span> – False corner, cut in masonry
+          </div>
+          <div className="line">
+            <span className="bold">Korfias</span> – The ridge of the roof
+          </div>
+          <div className="line">
+            <span className="bold">Bed</span> – Floor space where the staircase
+            ends
+          </div>
+          <div className="line">
+            <span className="bold">Mantzato</span> - Room with a fireplace used
+            as a living room and bedroom
+          </div>
+          <div className="line">
+            <span className="bold">Mesantra</span> – A series of cupboards with
+            paneled doors covering the entire wall
+          </div>
+          <div className="line">
+            <span className="bold">Mesochori</span> – The central square of the
+            settlement
+          </div>
+          <div className="line">
+            <span className="bold">Bandzades</span> – Skylights in the roof
+          </div>
+          <div className="line">
+            <span className="bold">Basia</span> – Elevation on the floor of the
+            mantzato and nontas, around the fireplace
+          </div>
+          <div className="line">
+            <span className="bold">Bimtsa</span> – Hidden room dug into the
+            ground, built around with stone and clay for waterproofing, used to
+            conceal valuable items
+          </div>
+          <div className="line">
+            <span className="bold">Bouchari</span> – The inward bulge of the
+            fireplace room, also the chimney
+          </div>
+          <div className="line">
+            <span className="bold">Nontas or ondas</span> – Reception room on
+            the upper floor
+          </div>
+          <div className="line">
+            <span className="bold">Ovoros</span> – Compound wall
+          </div>
+          <div className="line">
+            <span className="bold">Fourousia or killivantes</span> – Stone,
+            wooden, or metal decorative supports typically used for projecting
+            balconies or other architectural protrusions on floors
+          </div>
+          <div className="line">
+            <span className="bold">Hagiaty</span> – The entrance space on the
+            ground floor
           </div>
         </span>
       </div>
