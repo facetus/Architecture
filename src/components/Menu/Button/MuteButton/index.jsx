@@ -67,6 +67,8 @@ const MuteButton = () => {
   const onChangeHandler = (change) => {
     const audioPlayer = document.getElementById("audio-player");
     if (audioPlayer) audioPlayer.muted = change;
+    const videoPlayer = document.getElementById("video-player");
+    if (videoPlayer) videoPlayer.muted = change;
   };
 
   if (document.getElementById("audio-player"))

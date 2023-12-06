@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import { currentStateState } from "../../state";
 import Loader from "../Loader";
 
-const totalSteps = 14;
+const totalSteps = 12;
 
 const VideoPlayer = ({ currentInfo, preloadedDataList }) => {
   const [currentState, setCurrentState] = useRecoilState(currentStateState);
@@ -22,12 +22,12 @@ const VideoPlayer = ({ currentInfo, preloadedDataList }) => {
 
   useEffect(() => {
     // Start playing audio when component mounts
-    if (currentInfo) {
-      const vid = videoRef.current;
+    const vid = videoRef.current;
+    if (currentInfo && vid) {
+      vid.volume = 0.3;
       const handleTimeUpdate = () => {
-        console.log("video", vid.currentTime, vid.duration);
-
-        if (vid.currentTime > currentInfo.toTime) {
+        if (vid.currentTime >= currentInfo.toTime) {
+          videoRef.current.currentTime = currentInfo.toTime;
           vid.pause();
         }
       };
@@ -51,7 +51,7 @@ const VideoPlayer = ({ currentInfo, preloadedDataList }) => {
     <>
       <div className="video-container">
         <div className="vignette-overlay"></div>
-        <video ref={videoRef} playsInline preload="auto" src={preloadedDataList["/media/video/final.1.1.a.mp4"]}>
+        <video ref={videoRef} id="video-player" playsInline preload="auto" src={preloadedDataList["/media/video/final.1.2.mp4"]}>
         </video>
         <Stepper
           currentStep={currentState}

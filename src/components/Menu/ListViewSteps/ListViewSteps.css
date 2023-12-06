@@ -58,6 +58,10 @@
   z-index: 1;
 }
 
+.borderLeft + div {
+  transform: translateX(-8px);
+}
+
 .active > .borderLeft {
   border-color: var(--Dark-orange, #b73f08);
   z-index: 100;

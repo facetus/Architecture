@@ -4,7 +4,7 @@ import Menu from "./components/Menu";
 import Badge from "./components/Badge";
 import { useRecoilState } from "recoil";
 import { currentStateState } from "./state";
-import data from "./data/steps";
+import data, { totalStates } from "./data/steps";
 import AudioPlayer from "./components/AudioPlayer";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
@@ -21,7 +21,8 @@ function App() {
   });
 
   const moveNext = (currentState) => {
-    setCurrentState(currentState + 1);
+    if (currentState < totalStates) setCurrentState(currentState + 1);
+    else setCurrentState(1)
   };
 
   return (

@@ -16,7 +16,7 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
     })
     .flat();
 
-  const preloadList = ["/media/video/final.1.1.a.mp4", ...audioList];
+  const preloadList = ["/media/video/final.1.2.mp4", ...audioList];
 
   const totalPreloadingItems = preloadList.length;
 

@@ -31,7 +31,7 @@ const ListViewSteps = () => {
 
     return data.map((item, index) => {
       const { title, group, id } = item;
-      if (prevGroup !== group.props.children[0].props.children) {
+      if (index > 0 && prevGroup !== group.props.children[0].props.children) {
         prevGroup = group.props.children[0].props.children;
         return (
           <div key={index}>
@@ -70,7 +70,7 @@ const ListViewSteps = () => {
           }
         >
           {bullet}
-          <div className="borderLeft"></div>
+          {index > 0 && <div className="borderLeft"></div>}
           <div onClick={selecteNewState(id)}>{title}</div>
         </div>
       );
