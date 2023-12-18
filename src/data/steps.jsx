@@ -64,73 +64,73 @@ const data = [
     fromTime: 0,
     toTime: 10,
   },
-  // {
-  //   id: 2,
-  //   audio: {
-  //     gr: "/media/audio/gr/02.mp3",
-  //     en: "/media/audio/en/02.mp3",
-  //   },
-  //   group: (
-  //     <>
-  //       <span className="gr">Δόμηση</span>
-  //       <span className="en">Construction</span>
-  //     </>
-  //   ),
-  //   title: (
-  //     <>
-  //       <span className="gr">Αρχιτεκτονική Κάτοψη</span>
-  //       <span className="en">Architectural Layout</span>
-  //     </>
-  //   ),
-  //   content: {
-  //     gr: [
-  //       {
-  //         startTime: 0,
-  //         text: "Η αρχιτεκτονική διάταξη είναι άριστο δείγμα αποδοτικής χωροταξίας,",
-  //       },
-  //       { startTime: 4.7, text: "σχεδιασμένο για ορεινές περιοχές." },
-  //       {
-  //         startTime: 6.8,
-  //         text: "Ισορροπεί την ανάγκη για λειτουργικούς κοινόχρηστους χώρους με την ιδιωτικότητα κάθε κτηρίου.",
-  //       },
-  //       {
-  //         startTime: 12.4,
-  //         text: "Η κάτοψη των σπιτιών έχει σχήμα ορθογωνικό, τετράγωνο, παραλληλόγραμμο",
-  //       },
-  //       {
-  //         startTime: 17.2,
-  //         text: "και συχνά το τελικό αποτέλεσμα προκύπτει μετά από επεκτάσεις και προσθήκες.",
-  //       },
-  //     ],
-
-  //     en: [
-  //       {
-  //         startTime: 0,
-  //         text: "The architectural layout in Zagori is a testament to efficient spatial planning,",
-  //       },
-  //       { startTime: 5.12, text: " optimized for the mountainous terrain." },
-  //       { startTime: 7.35, text: "It balances the need for communal spaces" },
-  //       {
-  //         startTime: 10.1,
-  //         text: "with the rugged individuality of each structure.",
-  //       },
-  //     ],
-  //   },
-  //   badge: [
-  //     <>
-  //       <span className="gr">Ζαγορίσια Αρχιτεκτονική</span>
-  //       <span className="en">Zagorian Village Architecture</span>
-  //     </>,
-  //     <>
-  //       <span className="gr">Ιστορικός Σχεδιασμός Οικισμών</span>
-  //       <span className="en">Historical Settlement Design</span>
-  //     </>,
-  //   ],
-  //   fromTime: 5,
-  //   toTime: 18.23,
-  // },
   {
     id: 2,
+    audio: {
+      gr: "/media/audio/gr/02.mp3",
+      en: "/media/audio/en/02.mp3",
+    },
+    group: (
+      <>
+        <span className="gr">Δόμηση</span>
+        <span className="en">Construction</span>
+      </>
+    ),
+    title: (
+      <>
+        <span className="gr">Αρχιτεκτονική Κάτοψη</span>
+        <span className="en">Architectural Layout</span>
+      </>
+    ),
+    content: {
+      gr: [
+        {
+          startTime: 0,
+          text: "Η αρχιτεκτονική διάταξη είναι άριστο δείγμα αποδοτικής χωροταξίας,",
+        },
+        { startTime: 4.7, text: "σχεδιασμένο για ορεινές περιοχές." },
+        {
+          startTime: 6.8,
+          text: "Ισορροπεί την ανάγκη για λειτουργικούς κοινόχρηστους χώρους με την ιδιωτικότητα κάθε κτηρίου.",
+        },
+        {
+          startTime: 12.4,
+          text: "Η κάτοψη των σπιτιών έχει σχήμα ορθογωνικό, τετράγωνο, παραλληλόγραμμο",
+        },
+        {
+          startTime: 17.2,
+          text: "και συχνά το τελικό αποτέλεσμα προκύπτει μετά από επεκτάσεις και προσθήκες.",
+        },
+      ],
+
+      en: [
+        {
+          startTime: 0,
+          text: "The architectural layout in Zagori is a testament to efficient spatial planning,",
+        },
+        { startTime: 5.12, text: " optimized for the mountainous terrain." },
+        { startTime: 7.35, text: "It balances the need for communal spaces" },
+        {
+          startTime: 10.1,
+          text: "with the rugged individuality of each structure.",
+        },
+      ],
+    },
+    badge: [
+      <>
+        <span className="gr">Χωροταξική Οργάνωση</span>
+        <span className="en">Spatial Organization</span>
+      </>,
+      <>
+        <span className="gr">Λειτουργικός Σχεδιασμός</span>
+        <span className="en">Functional Design Efficiency</span>
+      </>,
+    ],
+    fromTime: 10,
+    toTime: 18.11,
+  },
+  {
+    id: 3,
     audio: {
       gr: "/media/audio/gr/03.mp3",
       en: "/media/audio/en/03.mp3",
@@ -198,11 +198,11 @@ const data = [
         <span className="en">Traditional Stonework Techniques</span>
       </>,
     ],
-    fromTime: 10,
+    fromTime: 18.11,
     toTime: 26.01,
   },
   {
-    id: 3,
+    id: 4,
     audio: {
       gr: "/media/audio/gr/04.mp3",
       en: "/media/audio/en/04.mp3",
@@ -273,7 +273,7 @@ const data = [
     toTime: 30.06,
   },
   {
-    id: 4,
+    id: 5,
     audio: {
       gr: "/media/audio/gr/05.mp3",
       en: "/media/audio/en/05.mp3",
@@ -334,7 +334,7 @@ const data = [
     toTime: 39.01,
   },
   {
-    id: 5,
+    id: 6,
     audio: {
       gr: "/media/audio/gr/08.mp3",
       en: "/media/audio/en/08.mp3",
@@ -400,7 +400,7 @@ const data = [
     toTime: 45.01,
   },
   {
-    id: 6,
+    id: 7,
     audio: {
       gr: "/media/audio/gr/07.mp3",
       en: "/media/audio/en/07.mp3",
@@ -468,7 +468,7 @@ const data = [
   },
 
   {
-    id: 7,
+    id: 8,
     audio: {
       gr: "/media/audio/gr/09.mp3",
       en: "/media/audio/en/09.mp3",
@@ -529,7 +529,7 @@ const data = [
     toTime: 62.77,
   },
   {
-    id: 8,
+    id: 9,
     audio: {
       gr: "/media/audio/gr/06.mp3",
       en: "/media/audio/en/06.mp3",
@@ -592,7 +592,7 @@ const data = [
     toTime: 64.79,
   },
   {
-    id: 9,
+    id: 10,
     audio: {
       gr: "/media/audio/gr/10.mp3",
       en: "/media/audio/en/10.mp3",
@@ -650,7 +650,7 @@ const data = [
     toTime: 72.05,
   },
   {
-    id: 10,
+    id: 11,
     audio: {
       gr: "/media/audio/gr/11.mp3",
       en: "/media/audio/en/11.mp3",
@@ -714,7 +714,7 @@ const data = [
     toTime: 79.07,
   },
   {
-    id: 11,
+    id: 12,
     audio: {
       gr: "/media/audio/gr/12.mp3",
       en: "/media/audio/en/12.mp3",
@@ -781,7 +781,7 @@ const data = [
     toTime: 88.22,
   },
   {
-    id: 12,
+    id: 13,
     audio: {
       gr: "/media/audio/gr/13.mp3",
       en: "/media/audio/en/13.mp3",

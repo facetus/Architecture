@@ -36,6 +36,9 @@ const icon = (
 const Badge = ({ badges, currentStateTimeProgress }) => {
   const [currentBadge, setCurrentBadge] = useState(-1);
   const [inTransition, setInTransition] = useState(false);
+  const [hidden, setHidden] = useState(true);
+  const [badgeText, setBadgeText] = useState("");
+  const badgeRef = useRef(null);
 
   function showAnimation(divElement, onComplete = () => {}) {
     if (divElement) {
@@ -43,6 +46,7 @@ const Badge = ({ badges, currentStateTimeProgress }) => {
       const tl = gsap.timeline({
         onComplete: () => {
           setInTransition(false);
+          setHidden(false);
           onComplete();
         }, // Resolve the Promise when the animation completes
       });
@@ -72,6 +76,7 @@ const Badge = ({ badges, currentStateTimeProgress }) => {
       const tl = gsap.timeline({
         onComplete: () => {
           setInTransition(false);
+          setHidden(true);
           onComplete();
         }, // Resolve the Promise when the animation completes
       });
@@ -84,26 +89,37 @@ const Badge = ({ badges, currentStateTimeProgress }) => {
     }
   }
 
-  const badgeRef = useRef(null);
-
   useEffect(() => {
-    hideAnimation(badgeRef.current, () => {
+    if (!hidden)
+      hideAnimation(badgeRef.current, () => {
+        setCurrentBadge(0);
+        if (badges[0]) {
+          setBadgeText(badges[0]);
+          showAnimation(badgeRef.current);
+        }
+      });
+    else {
       setCurrentBadge(0);
-      if (badges[0]) showAnimation(badgeRef.current);
-    });
+      if (badges[0]) {
+        setBadgeText(badges[0]);
+        showAnimation(badgeRef.current);
+      }
+    }
   }, [badges]);
 
   useEffect(() => {
     if (
       !inTransition &&
+      !hidden &&
       currentStateTimeProgress > (currentBadge + 1) / (badges.length + 1)
     ) {
       hideAnimation(badgeRef.current, () => {
+        setBadgeText(badges[currentBadge + 1]);
         setCurrentBadge(currentBadge + 1);
         showAnimation(badgeRef.current);
       });
     }
-  }, [currentStateTimeProgress, badges, inTransition]);
+  }, [currentStateTimeProgress]);
 
   return (
     <div className="badge-container" ref={badgeRef}>
@@ -115,7 +131,7 @@ const Badge = ({ badges, currentStateTimeProgress }) => {
         }
       >
         {icon}
-        <span className="badge-text">{badges[currentBadge] || ""}</span>
+        <span className="badge-text">{badgeText}</span>
       </div>
     </div>
   );

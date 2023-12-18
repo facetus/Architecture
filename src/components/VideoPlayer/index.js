@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import { currentStateState } from "../../state";
 import Loader from "../Loader";
 
-const totalSteps = 12;
+const totalSteps = 13;
 
 const VideoPlayer = ({ currentInfo, preloadedDataList }) => {
   const [currentState, setCurrentState] = useRecoilState(currentStateState);
@@ -56,7 +56,7 @@ const VideoPlayer = ({ currentInfo, preloadedDataList }) => {
     <>
       <div className="video-container">
         <div className="vignette-overlay"></div>
-        <video ref={videoRef} id="video-player" playsInline preload="auto" src={preloadedDataList["/media/video/final.1.2.mp4"]}>
+        <video ref={videoRef} id="video-player" playsInline preload="auto" src={preloadedDataList["/media/video/final.1.3.mp4"]}>
         </video>
         <Stepper
           currentStep={currentState}

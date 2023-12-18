@@ -16,7 +16,11 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
     })
     .flat();
 
-  const preloadList = ["/media/video/final.1.2.mp4", ...audioList];
+  const preloadList = [
+    "/media/video/final.1.3.mp4",
+    "/media/audio/background.mp3",
+    ...audioList,
+  ];
 
   const totalPreloadingItems = preloadList.length;
 
@@ -118,7 +122,7 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
             <div className="logoContainer">
               <img src="/media/icons/logo.svg" className="logo" />
               <span className="gr">Ζαγορίσια Αρχιτεκτονική</span>
-              <span className="en">Zagorochoria Architecture</span>
+              <span className="en">Zagorian Αrchitecture</span>
             </div>
             <div
               className={progress >= 1.0 ? "loaderBar active" : "loaderBar"}
@@ -131,7 +135,7 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
             >
               <div className="cta">
                 <span className="gr">Ας ξεκινήσουμε</span>
-                <span className="en">Lets Begin</span>
+                <span className="en">Let's Begin</span>
               </div>
               <div
                 className="progressBar"

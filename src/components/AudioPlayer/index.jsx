@@ -14,6 +14,7 @@ const AudioPlayer = ({
 }) => {
   // States and refs
   const audioPlayerRef = useRef(null);
+  const audioPlayerBackRef = useRef(null);
   const subsRef = useRef(null);
   const [subsWidth, setSubsWidth] = useState(0);
   const [subtitle, setSubtitle] = useState("");
@@ -159,15 +160,25 @@ const AudioPlayer = ({
         audioPlayerRef.current.src = preloadedDataList[currentInfo.audio.gr];
         audioPlayerRef.current.volume = 0.4;
       }
+
       audioPlayerRef.current.playbackRate = 1;
-      audioPlayerRef.current.play().catch((err) => {
-        console.log(err);
-      });
+      audioPlayerRef.current.play().catch((err) => {});
       setTimeout(() => {
-        audioPlayerRef.current.play().catch((err) => {
-          console.log(err);
-        });
+        audioPlayerRef.current.play().catch((err) => {});
       }, 100);
+
+      if (
+        audioPlayerBackRef.current.duration > 0 &&
+        !audioPlayerBackRef.current.paused
+      ) {
+      } else {
+        audioPlayerBackRef.current.src =
+          preloadedDataList["/media/audio/background.mp3"];
+        audioPlayerBackRef.current.volume = 0.3;
+        audioPlayerBackRef.current.play().catch((err) => {});
+      }
+
+
       return () => {
         audioPlayerRef.current.pause();
       };
@@ -189,6 +200,7 @@ const AudioPlayer = ({
         ))}
       </div>
       <audio id="audio-player" ref={audioPlayerRef} autoPlay />
+      <audio id="audio-player-back" ref={audioPlayerBackRef} autoPlay loop />
     </div>
   );
 };

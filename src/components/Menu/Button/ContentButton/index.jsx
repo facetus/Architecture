@@ -87,7 +87,7 @@ const ContentButton = ({ currentInfo, currentState }) => {
         <div className="logoContainer">
           <img src="/media/icons/logo.svg" className="logo" />
           <span className="gr">Ζαγορίσια Αρχιτεκτονική</span>
-          <span className="en">Zagorochoria Architecture</span>
+          <span className="en">Zagorian Αrchitecture </span>
         </div>
       }
       initActive={window.screen.width > 956}
