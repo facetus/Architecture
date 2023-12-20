@@ -3,6 +3,11 @@ import "./AudioPlayer.css";
 import { useRecoilState } from "recoil";
 import { autoPlayState } from "../../state";
 import { cleanup } from "@testing-library/react";
+import {
+  backgroundMusicVolume,
+  greekVoiceOverVolume,
+  englishVoiceOverVolume
+} from "../../data/settings";
 
 const AudioPlayer = ({
   audioId,
@@ -155,13 +160,12 @@ const AudioPlayer = ({
     if (currentInfo && currentInfo.audio) {
       if (document.getElementById("langStyle").innerText.includes(".gr")) {
         audioPlayerRef.current.src = preloadedDataList[currentInfo.audio.en];
-        audioPlayerRef.current.volume = 1;
+        audioPlayerRef.current.volume = englishVoiceOverVolume;
       } else {
         audioPlayerRef.current.src = preloadedDataList[currentInfo.audio.gr];
-        audioPlayerRef.current.volume = 0.4;
+        audioPlayerRef.current.volume = greekVoiceOverVolume;
       }
 
-      audioPlayerRef.current.playbackRate = 1;
       audioPlayerRef.current.play().catch((err) => {});
       setTimeout(() => {
         audioPlayerRef.current.play().catch((err) => {});
@@ -174,10 +178,9 @@ const AudioPlayer = ({
       } else {
         audioPlayerBackRef.current.src =
           preloadedDataList["/media/audio/background.mp3"];
-        audioPlayerBackRef.current.volume = 0.3;
+        audioPlayerBackRef.current.volume = backgroundMusicVolume;
         audioPlayerBackRef.current.play().catch((err) => {});
       }
-
 
       return () => {
         audioPlayerRef.current.pause();

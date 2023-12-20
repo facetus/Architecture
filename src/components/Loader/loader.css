@@ -139,7 +139,7 @@
   display: flex;
   width: 291px;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 16px;
   max-width: calc(100vw - 16px);
   transition: opacity 0.2s ease-in;

@@ -4,6 +4,7 @@ import "./VideoPlayer.css";
 import { useRecoilState } from "recoil";
 import { currentStateState } from "../../state";
 import Loader from "../Loader";
+import { videoVolume } from "../../data/settings";
 
 const totalSteps = 13;
 
@@ -24,12 +25,7 @@ const VideoPlayer = ({ currentInfo, preloadedDataList }) => {
     // Start playing audio when component mounts
     const vid = videoRef.current;
     if (currentInfo && vid) {
-      if (document.getElementById("langStyle").innerText.includes(".gr")) {
-        vid.volume = 0.05;
-      } else {
-        vid.volume = 0.1;
-      }
-      vid.volume = 0.1;
+      vid.volume = videoVolume;
       const handleTimeUpdate = () => {
         if (vid.currentTime >= currentInfo.toTime) {
           videoRef.current.currentTime = currentInfo.toTime;
