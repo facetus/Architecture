@@ -721,7 +721,7 @@ const data = [
     },
     group: (
       <>
-        <span className="gr">Ο Οικισμός</span>
+        <span className="gr">Οίκημα</span>
         <span className="en">Village</span>
       </>
     ),
@@ -788,7 +788,7 @@ const data = [
     },
     group: (
       <>
-        <span className="gr">Ο Οικισμός</span>
+        <span className="gr">Οίκημα</span>
         <span className="en">Village</span>
       </>
     ),

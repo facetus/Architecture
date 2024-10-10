@@ -11,25 +11,30 @@ const icon = (
     fill="none"
     className="badge-icon"
   >
-    <path
-      d="M6.68329 23.1501L4.66663 38.3334L13 33.3334L21.3333 38.3334L19.3166 23.1334"
-      fill="#FCDACB"
-    />
-    <path
-      d="M6.68329 23.1501L4.66663 38.3334L13 33.3334L21.3333 38.3334L19.3166 23.1334"
-      stroke="#B73F08"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M12.9999 25.0001C19.4432 25.0001 24.6666 19.7767 24.6666 13.3334C24.6666 6.89009 19.4432 1.66675 12.9999 1.66675C6.5566 1.66675 1.33325 6.89009 1.33325 13.3334C1.33325 19.7767 6.5566 25.0001 12.9999 25.0001Z"
-      fill="#FCDACB"
-      stroke="#B73F08"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <g id="Group">
+      <g id="Vector">
+        <path
+          d="M6.68317 23.15L4.6665 38.3334L12.9998 33.3334L21.3332 38.3334L19.3165 23.1334"
+          fill="#FAF4E9"
+        />
+        <path
+          d="M6.68317 23.15L4.6665 38.3334L12.9998 33.3334L21.3332 38.3334L19.3165 23.1334"
+          stroke="#736446"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <path
+        id="Vector_2"
+        d="M12.9999 25C19.4432 25 24.6666 19.7767 24.6666 13.3334C24.6666 6.89003 19.4432 1.66669 12.9999 1.66669C6.5566 1.66669 1.33325 6.89003 1.33325 13.3334C1.33325 19.7767 6.5566 25 12.9999 25Z"
+        fill="#FAF4E9"
+        stroke="#736446"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
   </svg>
 );
 

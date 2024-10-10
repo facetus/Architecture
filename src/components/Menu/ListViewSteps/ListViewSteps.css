@@ -63,17 +63,17 @@
 }
 
 .active > .borderLeft {
-  border-color: var(--Dark-orange, #b73f08);
+  border-color: var(--Dark-orange, #736446);
   z-index: 100;
 }
 
 .past > .borderLeft {
-  border-color: var(--Dark-orange, #b73f08);
+  border-color: var(--Dark-orange, #736446);
   z-index: 100;
 }
 
 .title-style.active > div {
-  color: var(--Dark-orange, #b73f08);
+  color: var(--Dark-orange, #736446);
   leading-trim: both;
   text-edge: cap;
 
@@ -102,11 +102,11 @@
 }
 
 .title-style.active > div > svg {
-  fill: var(--Dark-orange, #b73f08);
+  fill: var(--Dark-orange, #736446);
 }
 
 .title-style.past > div > svg {
-  fill: var(--Dark-orange, #b73f08);
+  fill: var(--Dark-orange, #736446);
 }
 
 

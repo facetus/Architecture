@@ -110,12 +110,18 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
           className="building top right"
           alt=""
           width="100vw"
+          onLoad={(event) => {
+            event.target.className += " loaded";
+          }}
         />
         <img
           src={getUrl(2)}
           className="building bottom left"
           width="100vw"
           alt=""
+          onLoad={(event) => {
+            event.target.className += " loaded";
+          }}
         />
         <div className="center-container middle">
           <div className="loaderContent">
@@ -146,6 +152,15 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
               <MuteButton />
               <LangButton />
             </div>
+
+            <img
+              alt="espa-logo"
+              id="espa-logo"
+              src="/media/icons/espa_en.jpeg"
+              onLoad={(event) => {
+                event.target.style.bottom = "18px";
+              }}
+            />
           </div>
         </div>
       </div>
