@@ -154,9 +154,19 @@ function Loader({ setCurrentState, setPreloadedDataList }) {
             </div>
 
             <img
+              className="en"
               alt="espa-logo"
               id="espa-logo"
               src="/media/icons/espa_en.jpeg"
+              onLoad={(event) => {
+                event.target.style.bottom = "18px";
+              }}
+            />
+            <img
+              className="gr"
+              alt="espa-logo"
+              id="espa-logo"
+              src="/media/icons/espa_gr.jpeg"
               onLoad={(event) => {
                 event.target.style.bottom = "18px";
               }}
